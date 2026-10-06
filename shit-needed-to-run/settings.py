@@ -118,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 #Replace with event time zone to correctly display timestamps 
-TIME_ZONE = 'America/Indiana/Indianapolis'
+TIME_ZONE = '<Tracker Time Zone here>'
 
 USE_I18N = True
 

@@ -1,5 +1,4 @@
 sudo systemctl stop nginx;
 sudo systemctl stop gunicorn.socket;
 sudo systemctl stop gunicorn.service;
-sudo systemctl stop redis.service;
 sudo systemctl stop daphne.service;
