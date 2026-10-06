@@ -1,0 +1,13 @@
+[Unit]
+Description=WebSocket Daphne Service
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/pattracker
+ExecStart=<venv location>/bin/python3 /home/<user account>/<venv location>/bin/daphne -b 127.0.0.1 -p 8001 <tracker name>.asgi:application
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

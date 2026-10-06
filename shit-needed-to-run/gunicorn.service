@@ -1,0 +1,20 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=<account name>
+Group=root
+WorkingDirectory=/home/<account name>/<tracker name> 
+ExecStart=/home/<account name>/<venv name/bin/gunicorn \
+          --access-logfile - \
+          -k uvicorn.workers.UvicornWorker \
+          --keep-alive 10 \
+          --forwarded-allow-ips='*' \
+          --workers 3 \
+          --bind unix:/run/donationtracker.sock \
+          <tracker name>.asgi:application
+
+[Install]
+WantedBy=multi-user.target
